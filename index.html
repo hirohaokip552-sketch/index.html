@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Your Friend Hiro</title>
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: #001f4d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.container {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.box {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+}
+
+textarea {
+    width: 90%;
+    height: 100px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    resize: none;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: #001f4d;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ddd;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Your friend Hiro</h2>
+
+<div class="box">
+<textarea id="message" placeholder="Write your message..."></textarea>
+<br>
+<button onclick="sendMessage()">Send</button>
+</div>
+
+</div>
+
+<script>
+function sendMessage(){
+    let msg = document.getElementById("message").value;
+
+    let email = "sorazzhaokip@gmail.com";
+    let subject = "Message from your friend Hiro";
+
+    window.location.href =
+    "mailto:" + email +
+    "?subject=" + subject +
+    "&body=" + encodeURIComponent(msg);
+}
+</script>
+
+</body>
+</html>
